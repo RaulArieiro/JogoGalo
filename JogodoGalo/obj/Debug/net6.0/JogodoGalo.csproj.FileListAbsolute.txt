@@ -1,0 +1,14 @@
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.AssemblyInfoInputs.cache
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.AssemblyInfo.cs
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\bin\Debug\net6.0\JogodoGalo.exe
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\bin\Debug\net6.0\JogodoGalo.deps.json
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\bin\Debug\net6.0\JogodoGalo.runtimeconfig.json
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\bin\Debug\net6.0\JogodoGalo.dll
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\bin\Debug\net6.0\JogodoGalo.pdb
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.dll
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\refint\JogodoGalo.dll
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.pdb
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.genruntimeconfig.cache
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\ref\JogodoGalo.dll
