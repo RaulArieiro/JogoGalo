@@ -12,3 +12,4 @@ C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\refint\JogodoGalo.
 C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.pdb
 C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.genruntimeconfig.cache
 C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\ref\JogodoGalo.dll
+C:\Users\Aluno\Desktop\JogodoGalo\JogodoGalo\obj\Debug\net6.0\JogodoGalo.sourcelink.json

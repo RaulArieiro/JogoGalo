@@ -37,11 +37,11 @@ namespace JogodoGalo
             return Convert.ToInt32(Console.ReadLine());
 
         }
-        public void gamede(Player j){
+        public void gamede(Player p){
             Console.WriteLine($"Joge de novo player {p.Name}");
         }
-        public bool vic(Player j){
-            Console.WriteLine($"A vitoria foi do {p.Name}")
+        public void vic(Player p){
+            Console.WriteLine($"A vitoria foi do {p.Name}");   
         }
     }     
 

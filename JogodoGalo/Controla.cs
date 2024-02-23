@@ -12,6 +12,8 @@ namespace JogodoGalo
       private Papel m1;
       int escolha;
       bool p;
+      bool vitoria  = false;
+      public int[] ficheiro = new int[]; 
 
         public Controla(Player[] jogador, Papel papel ){
           p1 = jogador[0];
@@ -40,80 +42,63 @@ namespace JogodoGalo
         public void Jogo(View ver){
           int registo = 1;
           bool boliana = false;
-          bool vitoria  = false;
+          bool cheio = false;
 
-          while(! vitoria){
+          while(!vitoria){
           ver.Mostra(m1);
           int pega = ver.Joge(registo == 1? p1:p2);
           boliana = m1.jogada(pega,registo == 1? p1:p2);
           ver.Mostra(m1);
-          Victory(registo == 1? p1:p2);
+          cheio = m1.comparar();
+          Victory(registo == 1? p1:p2, ver, m1 );
 
             if(boliana == true){
-              if(registo = 2){
-                resgisto = 1;
+              if(registo == 2){
+                registo = 1;
+                ver.gamede(p1);
               } else{
               registo = 2;
-              ver.gamede();
+              ver.gamede(p2);
               }
             }
           }
         }
 
-        public bool Victory(Player cruz, Player circulo, View ver, bool vitoria){
-          if(Arry[0] = cruz.simbulo() && Arry[1] = cruz.simbulo() && Arry[2] = cruz.simbulo()){
-            ver.vic();
+        public void Victory(Player cruz, View ver, Papel m1){
+          if(m1.Arry[0] == cruz.simbulo && m1.Arry[1] == cruz.simbulo && m1.Arry[2] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[3] = cruz.simbulo() && Arry[4] = cruz.simbulo() && Arry[5] = cruz.simbulo()){
-            ver.vic();
+          }else if(m1.Arry[3] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[5] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[6] = cruz.simbulo() && Arry[7] = cruz.simbulo() && Arry[8] = cruz.simbulo()){
-            ver.vic(); ///
+          }else if(m1.Arry[6] == cruz.simbulo && m1.Arry[7] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
+            ver.vic(cruz); ///
+            vitoria = true;
             
-          }else if(Arry[0] = cruz.simbulo() && Arry[4] = cruz.simbulo() && Arry[8] = cruz.simbulo()){
-            ver.vic();
+          }else if(m1.Arry[0] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[2] = cruz.simbulo() && Arry[4] = cruz.simbulo() && Arry[6] = cruz.simbulo()){
-            ver.vic();
+          }else if(m1.Arry[2] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[6] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[1] = cruz.simbulo() && Arry[4] = cruz.simbulo() && Arry[7] = cruz.simbulo()){
-            ver.vic();
+          }else if(m1.Arry[1] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[7] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[0] = cruz.simbulo() && Arry[3] = cruz.simbulo() && Arry[6] = cruz.simbulo()){
-            ver.vic();
+          }else if(m1.Arry[0] == cruz.simbulo && m1.Arry[3] == cruz.simbulo && m1.Arry[6] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
 
-          }else if(Arry[2] = cruz.simbulo() && Arry[5] = cruz.simbulo() && Arry[8] = cruz.simbulo()){
-            ver.vic();
-
-          }else if(Arry[0] = circulo.simbulo() && Arry[1] = circulo.simbulo() && Arry[2] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[3] = circulo.simbulo() && Arry[4] = circulo.simbulo() && Arry[5] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[6] = circulo.simbulo() && Arry[7] = circulo.simbulo() && Arry[8] = circulo.simbulo()){
-            ver.vic();///
-
-          }else if(Arry[0] = circulo.simbulo() && Arry[4] = circulo.simbulo() && Arry[8] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[2] = circulo.simbulo() && Arry[4] = circulo.simbulo() && Arry[6] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[1] = circulo.simbulo() && Arry[4] = circulo.simbulo() && Arry[7] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[0] = circulo.simbulo() && Arry[3] = circulo.simbulo() && Arry[6] = circulo.simbulo()){
-            ver.vic();
-
-          }else if(Arry[2] = circulo.simbulo() && Arry[5] = circulo.simbulo() && Arry[8] = circulo.simbulo()){
-            ver.vic(); 
-          }
-          vitoria = true;
+          }else if(m1.Arry[2] == cruz.simbulo && m1.Arry[5] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
+            ver.vic(cruz);
+            vitoria = true;
+          }  
+        
         }
 
-        public bool Empate(){
-
-        }
     }
 }

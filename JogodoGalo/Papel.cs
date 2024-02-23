@@ -21,9 +21,17 @@
                     Arry[corde] = jogador.simbulo;
                     return true;
                 }
-                
                 return false;
-                
+            }
+            public bool comparar(){
+                for(int i = 0; i<10;i++){
+                    if(Arry[i] == "__"){
+                        
+                        return false;
+                    } 
+                    
+                }
+                return true; 
             }
 
 
