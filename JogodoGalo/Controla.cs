@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 namespace JogodoGalo
 {
     public class Controla
-    {
-      private Player p1;
-      private Player p2;
-      private Papel m1;
+    {  
+      private int[] estatisticas = new int[3];
+      public Player p1;
+      public Player p2;
+      public Papel m1;
+      public Estatisticas estatis;
       int escolha;
       bool p;
       bool vitoria  = false;
-      public int[] ficheiro = new int[]; 
+      public int[] ficheiro = new int[88888]; 
+      int[] estatisticasDoJogo;
+
 
         public Controla(Player[] jogador, Papel papel ){
           p1 = jogador[0];
           p2 = jogador[1];
           m1 = papel;
+          estatis = new Estatisticas();
         }  
 
         public void Menu(View wer){
@@ -49,19 +54,29 @@ namespace JogodoGalo
           int pega = ver.Joge(registo == 1? p1:p2);
           boliana = m1.jogada(pega,registo == 1? p1:p2);
           ver.Mostra(m1);
-          cheio = m1.comparar();
-          Victory(registo == 1? p1:p2, ver, m1 );
+          cheio = m1.comparar(ver);
 
             if(boliana == true){
               if(registo == 2){
                 registo = 1;
                 ver.gamede(p1);
-              } else{
-              registo = 2;
-              ver.gamede(p2);
+                estatisticas[2]++;
+              }else{
+                registo = 2;
+                ver.gamede(p2);
+                estatisticas[2]++;
               }
             }
           }
+          if(cheio){
+            estatisticasDoJogo[2]++;
+            ver.Empate();
+            Victory(registo == 1? p1:p2, ver, m1);
+          }
+          SalvarEstatisticas();
+        }
+        public int[] ObterEstatisticas(){
+        return estatisticas;
         }
 
         public void Victory(Player cruz, View ver, Papel m1){
@@ -98,6 +113,16 @@ namespace JogodoGalo
             vitoria = true;
           }  
         
+        }
+        public void SalvarEstatisticas(){
+            estatisticasDoJogo = ObterEstatisticasDoJogo();
+            estatis.SalvarEstatisticas(estatisticasDoJogo);
+        }
+        private int[] ObterEstatisticasDoJogo(){
+            int[] estatisticas = new int[2];
+            estatisticas[0] = p1.ContarVitorias();
+            estatisticas[1] = p2.ContarVitorias();
+            return estatisticas;
         }
 
     }

@@ -19,9 +19,17 @@ namespace JogodoGalo
             private set;
 
         }
+        public int vitoriass;
+
         public Player(string sim){
             simbulo = sim;
+            vitoriass = 0;
         }
-
+         public void IncrementarVitorias(){
+            vitoriass++;
+        }
+        public int ContarVitorias(){
+            return vitoriass;
+        }
     }
 }

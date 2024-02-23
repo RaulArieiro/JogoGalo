@@ -23,14 +23,15 @@
                 }
                 return false;
             }
-            public bool comparar(){
+            public bool comparar(View re){
                 for(int i = 0; i<10;i++){
                     if(Arry[i] == "__"){
-                        
+                        re.Empate();
                         return false;
+                        
                     } 
-                    
                 }
+
                 return true; 
             }
 

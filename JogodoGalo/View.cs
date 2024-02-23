@@ -43,6 +43,12 @@ namespace JogodoGalo
         public void vic(Player p){
             Console.WriteLine($"A vitoria foi do {p.Name}");   
         }
+        public void Empate(){
+            Console.WriteLine($"Foi empate ");
+        }
+        public void MostraEstatisticas(){
+            Console.WriteLine("");     
+        }
     }     
 
 }
