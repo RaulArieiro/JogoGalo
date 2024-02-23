@@ -23,12 +23,11 @@
                 }
                 return false;
             }
-            public bool comparar(View re){
-                for(int i = 0; i<10;i++){
+            public bool comparar(View ver){                       
+                for(int i = 0; i<8 ;i++){
                     if(Arry[i] == "__"){
-                        re.Empate();
-                        return false;
-                        
+                      ver.NADA();
+                      return false;
                     } 
                 }
 

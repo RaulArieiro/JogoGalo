@@ -2,21 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace JogodoGalo
 {
     public class Controla
     {  
-      private int[] estatisticas = new int[3];
       public Player p1;
       public Player p2;
       public Papel m1;
       public Estatisticas estatis;
-      int escolha;
+      //int escolha; Antes era para escolher se queira sair, estatisticas ou jogar as vitorias estão a dar certo mas o empate não está a aparecer mais a mensagem antes aparecia sempre que algem jogava então mudei mas não ficou bom e mesmo tentando de tudo não deram certo as estatisticas
       bool p;
       bool vitoria  = false;
       public int[] ficheiro = new int[88888]; 
       int[] estatisticasDoJogo;
+      
+      private static string caminho = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "estatisticas.txt");
+      private int[] estatisticas = new int[5];
 
 
         public Controla(Player[] jogador, Papel papel ){
@@ -24,6 +27,15 @@ namespace JogodoGalo
           p2 = jogador[1];
           m1 = papel;
           estatis = new Estatisticas();
+        }
+        public void Iniciar(View ver){
+           if(File.Exists(caminho)){
+            StreamReader sr = new StreamReader(caminho);
+            for(int i =0 ; i < estatisticas.Length; i++){
+              estatisticas[i] = Convert.ToInt32(sr.ReadLine());
+            }
+            sr.Close();
+          }
         }  
 
         public void Menu(View wer){
@@ -37,7 +49,7 @@ namespace JogodoGalo
             }else if(j == 2){
               p = true;
             }else if(j == 3){
-              p = true;
+              p = false;
             }else{
               p = false;
               wer.Falso();
@@ -55,6 +67,7 @@ namespace JogodoGalo
           boliana = m1.jogada(pega,registo == 1? p1:p2);
           ver.Mostra(m1);
           cheio = m1.comparar(ver);
+          Victory(registo == 1? p1:p2, ver, m1);
 
             if(boliana == true){
               if(registo == 2){
@@ -71,12 +84,22 @@ namespace JogodoGalo
           if(cheio){
             estatisticasDoJogo[2]++;
             ver.Empate();
-            Victory(registo == 1? p1:p2, ver, m1);
+           
           }
           SalvarEstatisticas();
         }
         public int[] ObterEstatisticas(){
         return estatisticas;
+        }
+
+        public void Estatisticas(){
+          StreamWriter sw = new StreamWriter(caminho); //Abrir ficheiro
+          sw.WriteLine(estatisticas[0]);  //Escrever vitoria jogador 1 
+          sw.WriteLine(estatisticas[1]);  //Escrever vitoria jogador 2
+          sw.WriteLine(estatisticas[2]);  //Escrever empate
+          sw.WriteLine(estatisticas[3]);  //Escrever vitoria jogador 1
+          sw.WriteLine(estatisticas[4]);  //Escrever vitoria jogador 2
+          sw.Close();
         }
 
         public void Victory(Player cruz, View ver, Papel m1){
