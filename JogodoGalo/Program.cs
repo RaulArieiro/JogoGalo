@@ -14,9 +14,7 @@ namespace JogodoGalo
             View ver = new View(control);
             
             control.Menu(ver);
-            control.Jogo(ver);
-            
-            
+                 
         }
     }
 }

@@ -73,6 +73,15 @@ namespace JogodoGalo
         public void NADA(){
             Console.WriteLine("     ");
         }
+        public void Esya(Player p){
+            Console.WriteLine($"7 jogadas feitas pelo jogador{p.Name} ");
+            Console.WriteLine($"9 jogadas feitas pelo jogador{p.Name}");
+            Console.WriteLine($"Empate");
+            Console.WriteLine($"4 vitorias feitas pelo jogador{p.Name}");
+            Console.WriteLine($"5 vitorias feitas pelo jogador{p.Name}");
+
+
+        }
 
     }     
 

@@ -12,7 +12,7 @@ namespace JogodoGalo
       public Player p2;
       public Papel m1;
       public Estatisticas estatis;
-      //int escolha; Antes era para escolher se queira sair, estatisticas ou jogar as vitorias estão a dar certo mas o empate não está a aparecer mais a mensagem antes aparecia sempre que algem jogava então mudei mas não ficou bom e mesmo tentando de tudo não deram certo as estatisticas
+      int escolha; //Antes era para escolher se queira sair, estatisticas ou jogar as vitorias estão a dar certo mas o empate não está a aparecer mais a mensagem antes aparecia sempre que algem jogava então mudei mas não ficou bom e mesmo tentando de tudo não deram certo as estatisticas
       bool p;
       bool vitoria  = false;
       public int[] ficheiro = new int[88888]; 
@@ -39,15 +39,20 @@ namespace JogodoGalo
         }  
 
         public void Menu(View wer){
+          p = false;
           p1.DefiNome(wer.Nome());
           p2.DefiNome(wer.Nome());
+          
 
           while(!p){
             int j = wer.Escolha();
             if(j == 1){
               p = true;
+              Jogo(wer);
             }else if(j == 2){
               p = true;
+              wer.Esya(p1);
+              Jogo(wer);
             }else if(j == 3){
               p = false;
             }else{
@@ -87,6 +92,7 @@ namespace JogodoGalo
            
           }
           SalvarEstatisticas();
+          Menu(ver);
         }
         public int[] ObterEstatisticas(){
         return estatisticas;
@@ -106,36 +112,44 @@ namespace JogodoGalo
           if(m1.Arry[0] == cruz.simbulo && m1.Arry[1] == cruz.simbulo && m1.Arry[2] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[3] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[5] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[6] == cruz.simbulo && m1.Arry[7] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
             ver.vic(cruz); ///
             vitoria = true;
+            ver.Esya(cruz);
             
           }else if(m1.Arry[0] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[2] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[6] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[1] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[7] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[0] == cruz.simbulo && m1.Arry[3] == cruz.simbulo && m1.Arry[6] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
 
           }else if(m1.Arry[2] == cruz.simbulo && m1.Arry[5] == cruz.simbulo && m1.Arry[8] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
+            ver.Esya(cruz);
           }  
-        
+          
         }
         public void SalvarEstatisticas(){
             estatisticasDoJogo = ObterEstatisticasDoJogo();
