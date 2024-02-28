@@ -73,7 +73,6 @@ namespace JogodoGalo
         public void NADA(){
             Console.WriteLine("     ");
         }
-
     }     
 
 }

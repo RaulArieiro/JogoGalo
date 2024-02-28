@@ -33,6 +33,11 @@
 
                 return true; 
             }
+            public void Limpa(){
+                for(int i = 0; i<9; i++){
+                    Arry[i] = "__";
+                }
+            }
 
 
         }

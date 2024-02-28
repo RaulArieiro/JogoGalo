@@ -59,12 +59,16 @@ namespace JogodoGalo
               wer.Falso();
             }
           }while(!p);
+
+
         }
         public void Jogo(View ver){
           int registo = 1;
           bool boliana = false;
           bool cheio = false;
+          p  = false;
 
+          m1.Limpa();
           while(!vitoria && !cheio){
           ver.Mostra(m1);
           int pega = ver.Joge(registo == 1? p1:p2);
@@ -102,13 +106,13 @@ namespace JogodoGalo
            
           }
           estatis.SalvarEstatisticas(estatisticasDoJogo, caminho);
+          Menu(ver);
         }
 
         public void Victory(Player cruz, View ver, Papel m1){
           if(m1.Arry[0] == cruz.simbulo && m1.Arry[1] == cruz.simbulo && m1.Arry[2] == cruz.simbulo){
             ver.vic(cruz);
             vitoria = true;
-
 
           }else if(m1.Arry[3] == cruz.simbulo && m1.Arry[4] == cruz.simbulo && m1.Arry[5] == cruz.simbulo){
             ver.vic(cruz);
