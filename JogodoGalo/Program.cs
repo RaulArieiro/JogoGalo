@@ -10,11 +10,13 @@ namespace JogodoGalo
             Player cruz = new Player("X");
             Player circulo = new Player("0");
             Papel posicoes = new Papel();
-            Controla control = new Controla(new Player[2]{cruz, circulo},posicoes );
+            Estatisticas estistis = new Estatisticas();
+            Controla control = new Controla(new Player[2]{cruz, circulo},posicoes,estistis);
             View ver = new View(control);
+             
             
-            control.Menu(ver);
-            control.Jogo(ver);
+            control.Iniciar(ver);
+            
             
             
         }

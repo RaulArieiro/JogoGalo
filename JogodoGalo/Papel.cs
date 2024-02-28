@@ -24,7 +24,7 @@
                 return false;
             }
             public bool comparar(View ver){                       
-                for(int i = 0; i<8 ;i++){
+                for(int i = 0; i<9 ;i++){
                     if(Arry[i] == "__"){
                       ver.NADA();
                       return false;

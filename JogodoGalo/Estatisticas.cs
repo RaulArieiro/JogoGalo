@@ -10,7 +10,7 @@ namespace JogodoGalo
 
     public class Estatisticas
     {
-        public void ContarVitorias(Player jogador){
+        /*public void ContarVitorias(Player jogador){
             int[] estatisticas = LerEstatisticas();
 
             if (jogador != null){
@@ -19,7 +19,7 @@ namespace JogodoGalo
                 estatisticas[indiceJogador]++;
             }
             SalvarEstatisticas(estatisticas);
-        }
+        }*/
 
         public int[] LerEstatisticas(){
             FileStream ficha = new FileStream("estatistica.txt",FileMode.Create);
@@ -37,9 +37,9 @@ namespace JogodoGalo
             return estatisticas;
         }
 
-        public void SalvarEstatisticas(int[] estatisticas)
+        public void SalvarEstatisticas(int[] estatisticas, string caminho)
         {
-            using (StreamWriter escreve = new StreamWriter("estatistica.txt"))
+            using (StreamWriter escreve = new StreamWriter(caminho))
             {
                 foreach (int est in estatisticas)
                 {

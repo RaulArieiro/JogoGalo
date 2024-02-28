@@ -66,9 +66,9 @@ namespace JogodoGalo
         public void MostraEstatisticas(int[] estatisticas){
             Console.WriteLine($"Vitorias do Jogador 1: {estatisticas[0]}");
             Console.WriteLine($"Vitorias do Jogador 2: {estatisticas[1]}");
-            Console.WriteLine($"Empate: {estatisticas[2]}");    
-            Console.WriteLine($"Vitorias do Jogador 1: {estatisticas[3]}");
-            Console.WriteLine($"Vitorias do Jogador 2: {estatisticas[4]}"); 
+            Console.WriteLine($"Empate: {estatisticas[4]}");    
+            Console.WriteLine($"Jogadas do Jogador 1: {estatisticas[3]}");
+            Console.WriteLine($"Jogadas do Jogador 2: {estatisticas[2]}"); 
         }
         public void NADA(){
             Console.WriteLine("     ");
